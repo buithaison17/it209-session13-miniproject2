@@ -5,10 +5,10 @@ services:
         restart: unless-stopped
         ports:
             - "8081:8081"
-        # environment:
-        #   SPRING_DATASOURCE_URL: ${DATA_SOURCE_URL}
-        #   SPRING_DATASOURCE_USERNAME: ${DATA_SOURCE_USERNAME}
-        #   SPRING_DATASOURCE_PASSWORD: ${DATA_SOURCE_PASSWORD}
+        environment:
+            SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/campus_hub?createDatabaseIfNotExist=true
+            SPRING_DATASOURCE_USERNAME: root
+            SPRING_DATASOURCE_PASSWORD: 123456
         depends_on:
             - mysql
 
