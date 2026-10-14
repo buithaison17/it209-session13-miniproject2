@@ -6,9 +6,9 @@ services:
         ports:
             - "8081:8081"
         environment:
-            SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/campus_hub?createDatabaseIfNotExist=true
-            SPRING_DATASOURCE_USERNAME: root
-            SPRING_DATASOURCE_PASSWORD: 123456
+            DB_URL: jdbc:mysql://localhost:3306/campus_hub?createDatabaseIfNotExist=true
+            DB_USERNAME: root
+            DB_PASSWORD: 123456
         depends_on:
             - mysql
 
