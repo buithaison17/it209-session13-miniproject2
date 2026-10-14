@@ -17,7 +17,7 @@ services:
         container_name: frontend
         restart: unless-stopped
         ports:
-            - "88:88
+            - "80:80
         depends_on:
             - backend
 
