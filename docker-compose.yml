@@ -6,9 +6,9 @@ services:
         ports:
             - "8081:8081"
         environment:
-            DB_URL: jdbc:mysql://localhost:3306/campus_hub?createDatabaseIfNotExist=true
+            DB_URL: "jdbc:mysql://mysql:3306/campus_hub?createDatabaseIfNotExist=true"
             DB_USERNAME: root
-            DB_PASSWORD: 123456
+            DB_PASSWORD: "123456"
         depends_on:
             - mysql
 
@@ -25,8 +25,6 @@ services:
         image: mysql:8.0
         container_name: db
         restart: unless-stopped
-        ports:
-            - "3306:3306"
         environment:
             MYSQL_DATABASE: campus_hub
             MYSQL_ROOT_PASSWORD: "123456"
