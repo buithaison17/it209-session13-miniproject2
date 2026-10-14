@@ -1,16 +1,17 @@
 services:
     backend:
-        image: sonbui17/backend:latest
-        container_name: backend
-        restart: unless-stopped
-        ports:
-            - "8081:8081"
-        environment:
-            DB_URL: "jdbc:mysql://mysql:3306/campus_hub?createDatabaseIfNotExist=true"
-            DB_USERNAME: root
-            DB_PASSWORD: "123456"
-        depends_on:
-            - mysql
+    image: sonbui17/backend:latest
+    container_name: backend
+    restart: unless-stopped
+    ports:
+        - "8081:8081"
+    environment:
+        DB_URL: "jdbc:mysql://mysql:3306/campus_hub?createDatabaseIfNotExist=true"
+        DB_USERNAME: root
+        DB_PASSWORD: "123456"
+    depends_on:
+        mysql:
+            condition: service_healthy
 
     frontend:
         image: sonbui17/frontend:latest
